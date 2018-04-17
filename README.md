@@ -1,6 +1,6 @@
 # Einkaufsliste
 
-Eine synchroniserte Einkaufsliste welche mittels PouchDB die Daten lokal speichert und mit CouchDB synchronisiert. Für die offline Verfügbarkeit sorgen, Service Workers die den Inhalt cachen.
+Eine synchroniserte Einkaufsliste welche mittels PouchDB die Daten lokal speichert und mit CouchDB synchronisiert. Für die offline Verfügbarkeit sorgen Service Workers die den Inhalt cachen.
 
 
 ## LiveDemo
@@ -9,7 +9,9 @@ Eine synchroniserte Einkaufsliste welche mittels PouchDB die Daten lokal speiche
 ## Vorraussetzungen
 
 Webserver
+
 CouchDB
+
 
 
 
