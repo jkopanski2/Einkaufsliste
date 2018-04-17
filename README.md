@@ -10,7 +10,9 @@ Es wurde folgendes Tutorial für diese Anwendung verwendet: [Create Offline Web 
 - CouchDB
 
 ## LiveDemo
-<a href="https://ibb.co/ddmONS"><img src="https://preview.ibb.co/hFY3NS/LiveDemo.gif" alt="LiveDemo" border="0"></a>
+
+![](https://i.imgur.com/mj0vgZW.gif)
+
 
 
 
