@@ -12,7 +12,9 @@ Die Dokumentation für diese Web-App ist im Verzeichnis **protocol** zu finden.
 ## Vorraussetzungen
 
 - Webserver
-- CouchDB
+  - [Web Server for Chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)  
+- [CouchDB](http://couchdb.apache.org/) lokal 
+  - [http://localhost:5984/_utils/#database/einkaufsliste/_all_docs](http://localhost:5984/_utils/#database/einkaufsliste/_all_docs)
 
 ## LiveDemo
 
