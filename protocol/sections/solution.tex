@@ -13,7 +13,7 @@ Sogenannte Offline-First\cite{offlinefirst} Applikationen funktionieren auch, we
 
 \subsection{Mögliche Technologien}
 \subsubsection{Couchbase Sync Gateway}
-Couchbase hat eine Möglichkeit die mobile Datenbank Couchbase Lite mithilfe eines Couchbase Sync Gateway mit einem Couchbase Server zu synchronisieren. Die Schnittstelle liefert die Daten vom Client an den Server und sorgt somit für eine Sicherung der Daten.
+Couchbase hat eine Möglichkeit die mobile Datenbank \textit{Couchbase Lite} mithilfe eines \textit{Couchbase Sync Gateway} mit einem \textit{Couchbase Server} zu synchronisieren. Die Schnittstelle liefert die Daten vom Client an den Server und sorgt somit für eine Sicherung der Daten.
 
 \begin{figure}[!h]
   \begin{center}
@@ -23,7 +23,7 @@ Couchbase hat eine Möglichkeit die mobile Datenbank Couchbase Lite mithilfe ein
   \end{center}
 \end{figure}
 
-Hier eine Beispielanwendung, welche die Synchronisation mittels dem Couchbase Sync Gateway und die Offline Verfügbarkeit mittels PouchDB, welches später erklärt wird, zeigt:
+Hier eine Beispielanwendung, welche die Synchronisation mittels dem \textit{Couchbase Sync Gateway} und die Offline Verfügbarkeit mittels \textit{PouchDB}, welches später erklärt wird, zeigt:
 \href{https://www.codementor.io/pmbanugo/using-pouchdb-and-couchbase-in-an-offline-first-application-5pw2sxs6o}{Using PouchDB and Couchbase in an Offline-First Application\cite{syncgatewaytutorial}}
 
 \url{}
@@ -32,8 +32,8 @@ Hier eine Beispielanwendung, welche die Synchronisation mittels dem Couchbase Sy
 Mithilfe der Google Plattform Firebase kann man ebenfalls Daten in seiner Web Applikation synchronisieren. Hierfür wird die \textit{Realtime Database}\cite{realtimedb} verwendet, welche die Daten über alle Endgeräte mit der NoSQL Datenbank synchronisiert. Eine Beispielanwendung, welche genau den Anforderungen dieser Übung entspricht, ist hier zu finden: \href{http://softauthor.com/learn-to-build-firebase-crud-app-with-javascript-part01-reading-data/}{Firebase CRUD Web App with Javascript}\cite{firebaseexample} 
 
 
-\subsection{CouchDB - PouchDB mit Service worker}
-Als lokale Datenbank wird hier die dokementenbasierte Datenbank PouchDB verwendet, welche sich mit CouchDB synchronisieren lässt. Dies ist problemlos möglich, da PouchDB auf dem CouchDB sync Protkoll\cite{couchdbsyncprot} basiert.\cite{pouchdbintro} Für das Caching ist ein service worker\cite{serviceworker} zuständig. Dieser ist zwischen Server und Browser und kann somit steuern, welche Inhalte angezeigt werden sollen. Bei einer mangelnden Internetverbindung liest er die gecachten Daten aus und ermöglicht dem Benutzer somit die Offline Verfügbarkeit.
+\subsection{CouchDB - PouchDB mit Service Worker}
+Als lokale Datenbank wird hier die dokementenbasierte Datenbank \textit{PouchDB} verwendet, welche sich mit \textit{CouchDB} synchronisieren lässt. Dies ist problemlos möglich, da \textit{PouchDB} auf dem \textit{CouchDB sync Protkoll}\cite{couchdbsyncprot} basiert.\cite{pouchdbintro} Für das Caching ist ein \textit{Service Worker}\cite{serviceworker} zuständig. Dieser ist zwischen Server und Browser und kann somit steuern, welche Inhalte angezeigt werden sollen. Bei einer mangelnden Internetverbindung liest er die gecachten Daten aus und ermöglicht dem Benutzer somit die Offline Verfügbarkeit.
 
 \begin{figure}[!h]
   \begin{center}
@@ -50,13 +50,13 @@ Als lokale Datenbank wird hier die dokementenbasierte Datenbank PouchDB verwende
 
 \subsection{Gewählte Technologie}
 
-Durch die fast automatische Replikation der Daten zwischen PouchDB und CouchDB wurde dieser Ansatz gewählt. In der Hoffnung sich komplexe Konfigurationen, wie es beispielsweise bei Couchbase der Fall ist, zu ersparen. Die Google-Lösung mittels Firebase wurde ausgelassen, da man eine \enquote{kleinere} Lösungen ausprobieren wollte.
+Durch die fast automatische Replikation der Daten zwischen \textit{PouchDB} und \textit{CouchDB} wurde dieser Ansatz gewählt. In der Hoffnung sich komplexe Konfigurationen, wie es beispielsweise bei \textit{Couchbase} der Fall ist, zu ersparen. Die Google-Lösung mittels Firebase wurde ausgelassen, da man eine \enquote{kleinere} Lösungen ausprobieren wollte.
 
 \section{Implementierung}
 
 \subsection{Service Worker}
 
-Zu Beginn wird überprüft ob der Service Worker vom Browser unterstützt wird. Wenn ja, wird die Methode zum Registrieren aufgerufen. In diesem Fall ist es die \textit{service-worker.js}, welche aufgerufen wird:
+Zu Beginn wird überprüft ob der \textit{Service Worker} vom Browser unterstützt wird. Wenn ja, wird die Methode zum Registrieren aufgerufen. In diesem Fall ist es die \textit{service-worker.js}, welche aufgerufen wird:
 
 \begin{lstlisting}[language=JavaScript]
 if ('serviceWorker' in navigator) {
@@ -71,7 +71,7 @@ if ('serviceWorker' in navigator) {
 
 \end{lstlisting}
 
-Danach wird der Service Worker installiert. Hierfür muss unter anderem angegeben werden, welche Files gechacht werden sollen.
+Danach wird der \textit{Service Worker} installiert. Hierfür muss unter anderem angegeben werden, welche Files gechacht werden sollen.
 
 \begin{lstlisting}[language=JavaScript]
 var CACHE_NAME = 'einkaufsliste';
@@ -119,11 +119,11 @@ self.addEventListener('fetch', function(event) {
 });
 \end{lstlisting}
 
-Der Service Worker wird derzeit noch nicht von allen Browsern unterstützt\cite{sworkerusage}, weswegen zusätzlich noch der AppCache\cite{appcache} eingerichtet wird. 
+Der \textit{Service Worker} wird derzeit noch nicht von allen Browsern unterstützt\cite{sworkerusage}, weswegen zusätzlich noch der AppCache\cite{appcache} eingerichtet wird. 
 
 \subsection{PouchDB und CouchDB}
 
-Für die lokale Datenspeicherung ist PouchDB zuständig. Die Idee dahinter ist, in der Zeit in der keine Internetverbindung besteht, die Daten lokal zu speichern und bei wiederkommender Verbindung diese dann mit CouchDB zu synchronisieren. 
+Für die lokale Datenspeicherung ist \textit{PouchDB} zuständig. Die Idee dahinter ist, in der Zeit in der keine Internetverbindung besteht, die Daten lokal zu speichern und bei wiederkommender Verbindung diese dann mit \textit{CouchDB} zu synchronisieren. 
 
 Hierfür wurden benötigte CRUD-Funktionen implementiert:
 \begin{lstlisting}[language=JavaScript]
@@ -202,9 +202,9 @@ class Einkaufsliste {
 
 \end{lstlisting}
 
-Mit der PouchDB.synch() Funktion wird eine Synchronisation mit CouchDB sichergestellt. Hier wird der Name der lokalen Datenbank und die Zieldatenbank angegeben. In unserem Fall also \textit{PouchDB.sync('einkaufsliste', 'http://localhost:5984/einkaufsliste');}
+Mit der \textit{PouchDB.synch()} Funktion wird eine Synchronisation mit \textit{CouchDB} sichergestellt. Hier wird der Name der lokalen Datenbank und die Zieldatenbank angegeben. In unserem Fall also \textit{PouchDB.sync('einkaufsliste', 'http://localhost:5984/einkaufsliste');}
 
-Hierfür wird eine lokale CouchDB Instanz auf dem Port 5984 benötigt, welche zusätzlich noch CORS\cite{cors} aktiviert hat. Dies kann man über die grafische Oberfläche unter '\textit{http://localhost:5984/\\\_utils/\#\_config/couchdb@localhost/cors}' konfigurieren. Für diese Test-Applikation werden alle Domains zugelassen. 
+Hierfür wird eine lokale \textit{CouchDB} Instanz auf dem Port 5984 benötigt, welche zusätzlich noch CORS\cite{cors} aktiviert hat. Dies kann man über die grafische Oberfläche unter '\textit{http://localhost:5984/\\\_utils/\#\_config/couchdb@localhost/cors}' konfigurieren. Für diese Test-Applikation werden alle Domains zugelassen. 
 
 \begin{figure}[!h]
   \begin{center}
