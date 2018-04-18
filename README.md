@@ -9,7 +9,7 @@ Es wurde folgendes Tutorial für diese Anwendung verwendet: [Create Offline Web 
 Die Dokumentation für diese Web-App ist im Verzeichnis **protocol** zu finden.
 
 
-## Vorraussetzungen
+## Voraussetzungen
 
 - Webserver
   - [Web Server for Chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)  
