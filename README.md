@@ -4,6 +4,11 @@ Eine synchroniserte Einkaufsliste welche mittels PouchDB die Daten lokal speiche
 
 Es wurde folgendes Tutorial für diese Anwendung verwendet: [Create Offline Web Apps Using Service Workers & PouchDB](https://www.sitepoint.com/offline-web-apps-service-workers-pouchdb/)
 
+## Dokumentation
+
+Die Dokumentation für diese Web-App ist im Verzeichnis **protocol** zu finden.
+
+
 ## Vorraussetzungen
 
 - Webserver
